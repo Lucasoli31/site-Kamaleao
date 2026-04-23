@@ -2332,12 +2332,14 @@ document.addEventListener('keydown', function(e) {
 const nomeInput = document.getElementById("cadastroNome");
 const whatsappInput = document.getElementById("cadastroWhats");
 const cadastroBtn = document.getElementById("cadastroBtn");
+const nascimentoInput = document.getElementById("cadastroNascimento");
        
         function validarFormulario() {
   const nomeValido = nomeInput.value.length >= 3 && nomeInput.value.length <= 20;
   const whatsappValido = whatsappInput.value.length >= 10 && whatsappInput.value.length <= 15;
+    const dataValida = nascimentoInput.value !== "";
 
-  if (nomeValido && whatsappValido) {
+  if (nomeValido && whatsappValido && dataValida) {
     cadastroBtn.disabled = false;
     cadastroBtn.style.opacity = "1";
     cadastroBtn.style.cursor = "pointer";
@@ -2362,11 +2364,13 @@ nomeInput.addEventListener("input", () => {
 whatsappInput.addEventListener("input", () => {
   whatsappInput.value = whatsappInput.value.replace(/\D/g, "");
 
-  if (whatsappInput.value.length > 15) {
-    whatsappInput.value = whatsappInput.value.slice(0, 15);
+  if (whatsappInput.value.length > 11) {
+    whatsappInput.value = whatsappInput.value.slice(0, 11);
   }
     validarFormulario();
 });
+        
+nascimentoInput.addEventListener("input", validarFormulario);
         
 cadastroBtn.disabled = true;
 cadastroBtn.style.opacity = "0.5";
