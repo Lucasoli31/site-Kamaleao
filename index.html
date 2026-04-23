@@ -2335,8 +2335,8 @@ const cadastroBtn = document.getElementById("cadastroBtn");
 const nascimentoInput = document.getElementById("cadastroNascimento");
        
         function validarFormulario() {
-  const nomeValido = nomeInput.value.length >= 3 && nomeInput.value.length <= 20;
-  const whatsappValido = whatsappInput.value.length >= 10 && whatsappInput.value.length <= 15;
+  const nomeValido = nomeInput.value.length >= 3 && nomeInput.value.length <= 40;
+  const whatsappValido = whatsappInput.value.length >= 10 && whatsappInput.value.length <= 40;
     const dataValida = nascimentoInput.value !== "";
 
   if (nomeValido && whatsappValido && dataValida) {
