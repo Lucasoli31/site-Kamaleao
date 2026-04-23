@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Kamaleão Drinkeria - Cardápio Digital</title>
@@ -1517,6 +1520,31 @@
 
     </style>
 </head>
+
+     <!-- Cadastro -->
+<div id="cadastro" class="modal fade in show" data-bs-backdrop="static" data-bs-keyboard="false">
+  <div class="modal-dialog modal-fullscreen">
+    <div class="modal-content">
+      <form id="cadastro-form">
+        <!-- Campo nome -->
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome" required>
+
+        <!-- Campo whatsApp -->
+        <label for="whatsapp">WhatsApp:</label>
+        <input type="tel" id="whatsapp" name="whatsapp" required>
+
+        <!-- Campo nascimento -->
+        <label for="nascimento">Nascimento:</label>
+        <input type="date" id="nascimento" name="nascimento" required>
+
+        <!-- Botão cadastrar -->
+        <button type="submit" class="btn btn-primary">Cadastrar</button>
+      </form>
+    </div>
+  </div>
+</div>
+    
 <body>
 
 
