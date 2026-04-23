@@ -2329,25 +2329,26 @@ document.addEventListener('keydown', function(e) {
     <button class="admin-clear-btn" onclick="clearCadastros()">Limpar Todos os Cadastros</button>
 </section>
     <script>
-  const nomeInput = document.getElementById("nome");
+const nomeInput = document.getElementById("cadastroNome");
+const whatsappInput = document.getElementById("cadastroWhats");
 
-  nomeInput.addEventListener("input", () => {
-    nomeInput.value = nomeInput.value.replace(/[^a-zA-ZÀ-ÿ\s]/g, "");
+// NOME: só letras + até 20 caracteres
+nomeInput.addEventListener("input", () => {
+  nomeInput.value = nomeInput.value.replace(/[^a-zA-ZÀ-ÿ\s]/g, "");
 
-    if (nomeInput.value.length > 20) {
-      nomeInput.value = nomeInput.value.slice(0, 20);
-    }
-  });
+  if (nomeInput.value.length > 20) {
+    nomeInput.value = nomeInput.value.slice(0, 20);
+  }
+});
 
-  const whatsappInput = document.getElementById("whatsapp");
+// WHATSAPP: só números + até 15 caracteres
+whatsappInput.addEventListener("input", () => {
+  whatsappInput.value = whatsappInput.value.replace(/\D/g, "");
 
-  whatsappInput.addEventListener("input", () => {
-    whatsappInput.value = whatsappInput.value.replace(/\D/g, "");
-
-    if (whatsappInput.value.length > 15) {
-      whatsappInput.value = whatsappInput.value.slice(0, 15);
-    }
-  });
+  if (whatsappInput.value.length > 15) {
+    whatsappInput.value = whatsappInput.value.slice(0, 15);
+  }
+});
 </script>
 </body>
 </html>
